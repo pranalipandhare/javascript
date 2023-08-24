@@ -225,6 +225,30 @@ if (favourite !== 23) console.log('Why not 237');
 
 
 // Boolean Logic: The AND, OR & NOT operators
+// A AND B: true when ALL are true
+// A OR B: true when ONE is true
+// NOT A, NOT B: Inverts true/false
+// It is used by using Boolean
+
+// Logical Operators
+
+const hasDriversLicense = true // A 
+const hasGoodVision = false    // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+if (hasDriversLicense || hasGoodVision) {
+    console.log('pranali is able to drive!');
+} else {
+    console.log('someone else should drive..');
+}
+
+const isTired = false // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+
 
 
 
