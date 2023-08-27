@@ -249,7 +249,98 @@ const isTired = false // C
 console.log(hasDriversLicense && hasGoodVision && isTired);
 
 
+// The Switch Statement
+
+const day = 'monday';
+
+switch (day) {
+    case 'monday': // day === 'monday' --> if this condition is true then following conditions executed
+        console.log('Plam course structure');
+        console.log('Go to coding meetup');
+    //break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+        break;     // 'break' stop execution
+    case 'wednesday':
+    case 'thursday':
+        console.log('write code example');
+        break;
+    case 'friday':
+        console.log('record Videos');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy the weekend: D');
+        break;
+    default:
+        console.log('Not a valid day!');
+}
+
+// Above statement works in 'if_else' statement
+
+const day1 = 'friday';
+
+if (day1 === 'monday') {
+    console.log('Plan course structure');
+    console.log('Go to coding meetup');
+} else if (day1 === 'tuesday') {
+    console.log('Prepare theory videos');
+} else if (day1 === 'wednesday' || day1 === 'thursday') {
+    console.log('write code example');
+} else if (day1 === 'friday') {
+    console.log('Not a valid day!');
+} else if (day1 === 'saturday' || day1 === 'sunday') {
+    console.log('Enjoy the weekend: D');
+} else {
+    console.log('error');
+}
+
+// statements and expressions 
+
+// Expression is piece of code that produces a value 
+// 3 + 4 it is a example of a expression because it produces a value
+// other exaple : 1] 1991 2] true && false && false
+
+if (23 > 10) {
+    const str = '23 is bigger';
+    // here declare a value but doesn't produce a value 
+    // and str is an expression and whole line of code is a statment
+}
+
+console.log(`I'm ${2037 - 2002} years old,`)
+
+// here ${2037 - 2002} this is an expression
+
+const me = 'Pranali';
+console.log(`I'm ${2037 - 2002} years old ${me}`)
+
+// above '${me}' also accepted by js because it is also a statement
+// but js not accept the "if (23 > 10) {const str = '23 is bigger';}" this if unknown token because it is a statment
 
 
 
+// The Conditional(Ternary) Operators
 
+// 1
+const age4 = 23;
+age4 >= 18 ? console.log('I like to drink wine') :  //'if' part
+    console.log('I like to drink water');           //'else' part 
+
+const drink = age >= 18 ? 'wine' : 'water';
+console.log(drink);
+
+// 2
+let drink2;
+if (age >= 18) {
+    drink2 = 'water';
+} else {
+    drink2 = 'wine';
+}
+console.log(drink2);
+
+// 3 
+
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`)
+
+// ternary operator is not a replacment of if_else statment
+// It is used mostly in we neeed to take a quik decision
