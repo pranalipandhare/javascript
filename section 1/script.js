@@ -344,3 +344,5 @@ console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`)
 
 // ternary operator is not a replacment of if_else statment
 // It is used mostly in we neeed to take a quik decision
+
+
