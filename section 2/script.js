@@ -107,12 +107,16 @@ function calcAge(birthYear) {
 }
 
 //2] Function expression: Essentially a function value stored in a variable
-const calcAge = function (birthYear) {
+/* 
+    const calcAge = function (birthYear) {
     return 2037 - birthYear;
-}
+} 
+*/
 
 //3] Arrow Function: Great for a quick one-line functions. Has no this keyword(more later..)
+/*
 const calcAge = birthYear => 2037 - birthYear;
+*/
 
 // * Three different ways of writting functions, but they all work in a simiilar way. receive input data, transform data, then output data
 // * Main Components of the Function
@@ -125,4 +129,53 @@ const calcAge = birthYear => 2037 - birthYear;
 - Variable to save returned value(function output)
 - return statement to output a value from the function and terminate execution
 */
+
+// Array 
+
+const friend1 = 'vishu';
+const friend2 = 'kunal';
+const friend3 = 'omii';
+
+const friends = ['vishu', 'kunal', 'omii'];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[1]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Jay';
+console.log(friends);
+//friends = ['bob', 'alice']
+
+const firstName = 'pranali';
+const pranali = ['pranali', 'doremon', 2037 - 1991, 'teacher', friends];
+console.log(pranali);
+console.log(pranali.length);
+
+
+// Basic Array Operations(Methods)
+
+const friends1 = ['pranali', 'krish', 'shubhi'];
+
+//add elements
+const newLength = friends1.push('shree');
+console.log(friends);
+console.log(newLength);
+
+friends1.unshift('abhi');
+console.log(friends1);
+
+//Remove elements
+friends1.pop(); //last
+const popped = friends1.pop();
+console.log(popped);
+console.log(friends1);
+
+friends1.unshift(); //first
+console.log(friends1);
 
