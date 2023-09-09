@@ -176,6 +176,230 @@ const popped = friends1.pop();
 console.log(popped);
 console.log(friends1);
 
-friends1.unshift(); //first
+friends1.shift(); //first
 console.log(friends1);
 
+console.log(friends1.indexOf('krish'));
+console.log(friends1.indexOf('shubhi'));
+
+friends1.push(23);
+console.log(friends1.includes('krish'));
+console.log(friends1.includes('shubhi'));
+console.log(friends1.includes(23));
+
+if (friends1.includes('krish')) {
+    console.log('You have a friend called shubhi');
+}
+
+
+// Introduction To Objects
+// objects is  data structure of js
+// There are multiple ways to creating objects
+
+const jonasArray = [
+    'Jonas',
+    'jay',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Stevan']
+]
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends2: ['Michael', 'Peter', 'Stevan']
+};
+console.log(jonas);
+
+// Dot ve Bracket Notation
+// How to retrive data from objects & also how to change data in a objects using dot and bracket notation
+
+const jonas1 = {
+    firstName: 'Jonas',
+    lastName: 'schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends2: ['Michael', 'Peter', 'Stevan']
+};
+console.log(jonas1);
+
+console.log(jonas1);
+
+console.log(jonas1.lastName);   // Dot notation .
+console.log(jonas1['lastName']); // Bracket notation []
+
+const nameKey = 'Name';
+console.log(jonas1['first' + nameKey]);
+console.log(jonas1['last' + nameKey]);
+
+// console.log(jonas.'last' + nameKey) // This will not work need [] bracket notation
+
+const interestedIn = prompt('what do you want o know about jonas? choose between firstName, LastName, age, job, friends2');
+
+//console.log(jonas[interestedIn]);     //Bracket function gives correct output
+//console.log(jonas.interestedIn);     //this function output is undefined
+
+if (jonas[interestedIn]) {
+    console.log(jonas[interestedIn]);
+} else {
+    console.log('wrong request! choose between firstName, LastName, age, job, friends2')
+}
+
+jonas.location = 'Aurangabad';
+jonas['twitter'] = '@jonasschmedtman';
+console.log(jonas);
+
+// challenge: jonas has 3 friends, and his best friend is called Michael
+
+console.log(`${jonas.firstName} has ${jonas.friends2.length} friends, and his best friend is callled ${jonas.friends2[0]}`);
+
+
+//OBJECT METHOD
+
+const pro = {
+    firstName: 'Pro',
+    lastName: 'Pandhare',
+    birthY: '1991',
+    job: 'Engineer',
+    friends2: ['Runali', 'sakshi', 'Siddhi'],
+    hadDriversLiceense: true,
+
+    //calcAge: function (birthY) {
+    //  return 2037 - birthY;
+    //}
+    calcAge: function () {
+        this.age = 2037 - this.birthY;
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()} -year old ${pro.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license.`
+    }
+
+};
+
+console.log(pro.calcAge(1991));
+
+console.log(pro.age);
+console.log(pro.age);
+
+//console.log(pro['calcAge'](1991)); 
+
+//Challenge
+// Pro is a 46 year old teacher, and he has a driver's license
+
+console.log(pro.getSummary());
+
+// ITERATION: THE FOR LOOP
+
+/*console.log('Lifting weights repitation 1');
+console.log('Lifting weights repitation 2');
+console.log('Lifting weights repitation 3');
+console.log('Lifting weights repitation 4'); */
+
+// for loop keeps running until condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repitation ${rep}`);
+};
+
+
+// LOOPING ARRAYS, BREAKING AND CONTINUING 
+
+const pro1 = [
+    'pro',
+    'Jay',
+    2037 - 1991,
+    'teacher',
+    ['mau', 'kau', 'bau'],
+    true
+];
+
+const types = []; //empty array
+
+//console.log(pro[0]);
+//console.log(pro[1]);
+//...
+//console.log(pro[4])
+// pro[5] does not exist 
+
+
+for (let i = 0; i < pro1.length; i++) {
+    console.log(pro1[i], typeof pro1[i]);
+
+    // filling types array
+    // types[i] = typeof pro1[i];
+    types.push(typeof pro1[i]);
+}
+
+console.log(types);
+
+const year = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < year.length; i++) {
+    ages.push(2037 - year[i]);
+}
+
+console.log(ages);
+
+//CONTINUE AND BREAK STATEMENT 
+
+// CONTINUE STATMENT
+console.log('--- ONLY STRINGS---')
+for (let i = 0; i < pro1.length; i++) {
+    if (typeof pro1[i] !== 'string') continue;
+
+    console.log(pro1[i], typeof [i]);
+}
+
+// Break statement
+console.log('--- BREAK WITH NUMBER---')
+for (let i = 0; i < pro1.length; i++) {
+    if (typeof pro1[i] !== 'number') break;
+
+    console.log(pro1[i], typeof [i]);
+}
+
+// LOOPING BACKWARD AND LOOPS IN LOOPS
+
+const om = [
+    'Om',
+    'shreyas',
+    2037 - 1991,
+    'Charter Accountant',
+    ['shreyu', 'pratik', 'yash']
+]
+
+// 0, 1, ...., 4
+// 0, 3,....., 5
+
+for (let i = om.length - 1; i >= 0; i--) {
+    console.log(i, om[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`--------STARTING EXERCISE ${exercise}`);
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Eercise ${exercise}: Lifting weight repetition ${rep}`);
+    }
+}
+
+// THE WHILE LOOP 
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(`WHILE: Lifting weights repetition ${rep}`);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6)
+console.log(dice)
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 1);
+    if (dice === 6) console.log('Loop os about to end... ')
+}
